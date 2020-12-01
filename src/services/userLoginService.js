@@ -1,7 +1,7 @@
-import http from './httpServices';
-
-const apiEndPoint = process.env.apiUrl + '/merchant/auth/sign-in';
+import http from "./httpServices";
+import { apiUrl } from "../config.json";
+const apiEndPoint = apiUrl + "/users/login/";
 
 export const userLogin = (user) => {
-  return http.post(apiEndPoint, { email: user.email, password: user.password });
+  return http.post(apiEndPoint, { username: user.email, password: user.password });
 };

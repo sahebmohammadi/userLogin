@@ -21,8 +21,9 @@ const LoginForm = ({ redirectLink }) => {
     try {
       const { data: response } = await userLogin(values);
       // Save Token :
-      const { token } = response.data;
-      localStorage.setItem("token", token);
+      console.log(response);
+      const { tokens } = response;
+      localStorage.setItem("token", tokens.access);
       // Redirect
       //   router.replace(redirectLink);
     } catch (ex) {}
@@ -30,7 +31,7 @@ const LoginForm = ({ redirectLink }) => {
 
   //  validation schema
   const validationSchema = Yup.object({
-    email: Yup.string().required(forms.email.enter).email(forms.email.check),
+    email: Yup.string().required(forms.email.enter),
     password: Yup.string().required(forms.password.enter),
   });
 
@@ -52,7 +53,7 @@ const LoginForm = ({ redirectLink }) => {
                 <Field
                   id="email"
                   name="email"
-                  type="email"
+                  type="text"
                   placeholder="example@gmail.com"
                   className={classes.input}
                 />
