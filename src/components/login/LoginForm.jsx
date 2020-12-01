@@ -1,6 +1,6 @@
 // Import
 import React from "react";
-// import { useRouter } from "next/router";
+import { useHistory } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { userLogin } from "../../services/userLoginService";
@@ -9,7 +9,7 @@ import classes from "./loginForm.module.scss";
 //  Component :
 const LoginForm = ({ redirectLink }) => {
   const { forms } = constants;
-  //   const router = useRouter();
+  const history = useHistory();
   //  initial values
   const initialValues = {
     email: "",
@@ -25,6 +25,7 @@ const LoginForm = ({ redirectLink }) => {
       const { tokens } = response;
       localStorage.setItem("token", tokens.access);
       // Redirect
+      history.push("/panel");
       //   router.replace(redirectLink);
     } catch (ex) {}
   };

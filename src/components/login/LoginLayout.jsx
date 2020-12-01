@@ -1,7 +1,6 @@
 // imports
-import React from 'react';
-import classes from './loginLayout.module.scss';
-
+import React from "react";
+import classes from "./loginLayout.module.scss";
 const loginLayout = ({ children }) => {
   return (
     <>
