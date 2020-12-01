@@ -1,6 +1,9 @@
 import React from "react";
 const Home = () => {
-  return <>Home</>;
+  const style = {
+    padding: "100px 70px",
+  };
+  return <h1 style={style}>Home Page </h1>;
 };
 
 export default Home;

@@ -8,9 +8,12 @@ const Panel = () => {
     localStorage.removeItem("token");
     history.push("/");
   };
+  const style = {
+    padding: "100px 70px",
+  };
   return (
     <>
-      <h1>Well come to user Panel</h1>
+      <h1 style={style}>Well come to user Panel</h1>
       <button onClick={handleLogOut}>Logout</button>
     </>
   );

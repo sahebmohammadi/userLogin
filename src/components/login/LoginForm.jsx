@@ -26,7 +26,6 @@ const LoginForm = ({ redirectLink }) => {
       localStorage.setItem("token", tokens.access);
       // Redirect
       history.push("/panel");
-      //   router.replace(redirectLink);
     } catch (ex) {}
   };
 
