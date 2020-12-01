@@ -19,10 +19,11 @@ const LoginForm = ({ redirectLink }) => {
   const onSubmit = async (values) => {
     // CALL THE SERVER
     try {
-      const { data: response } = await userLogin(values);
+      const response = await userLogin(values);
+      console.log(response);
       // Save Token :
       console.log(response);
-      const { tokens } = response;
+      const { tokens } = response.data;
       localStorage.setItem("token", tokens.access);
       // Redirect
       history.push("/panel");
