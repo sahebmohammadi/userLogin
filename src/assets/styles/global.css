@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'Shabnam';
+    font-size: 15px;
+    src: url('../fonts/Shabnam-Bold.eot');
+    src: url('../fonts/Shabnam.woff') format('woff'),
+      url('../fonts/Shabnam.ttf') format('truetype');
+  }
+  html,
+  body {
+    font-family: 'Shabnam';
+    padding: 0;
+    margin: 0;
+    direction: rtl;
+    box-sizing: border-box;
+    background-color: #fff !important;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
