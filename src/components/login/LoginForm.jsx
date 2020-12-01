@@ -1,15 +1,15 @@
 // Import
 import React from "react";
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { login } from "services/merchantSigninService";
-import * as constants from "../../../../constants";
-import classes from "./loginFormLayout.module.scss";
+import * as constants from "../../../constants.js";
+import classes from "./loginForm.module.scss";
 //  Component :
 const LoginForm = ({ redirectLink }) => {
   const { forms } = constants;
-  const router = useRouter();
+//   const router = useRouter();
   //  initial values
   const initialValues = {
     email: "",
@@ -24,7 +24,7 @@ const LoginForm = ({ redirectLink }) => {
       const { token } = response.data;
       localStorage.setItem("token", token);
       // Redirect
-      router.replace(redirectLink);
+    //   router.replace(redirectLink);
     } catch (ex) {}
   };
 
