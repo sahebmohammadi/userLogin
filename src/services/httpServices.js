@@ -6,17 +6,7 @@ axios.interceptors.response.use(null, (error) => {
     error.response.status >= 400 &&
     error.response.status < 500;
   if (expectedError) {
-    const { data } = error.response;
-
-    const { data: AllErros } = data;
-    const { errors } = AllErros;
-    if (errors.email) {
-      //   toast.error(errors.email[0]);
-    }
-    console.log("Password Errors : ", errors.password);
-    if (errors.password) {
-      //   toast.error(errors.password[0]);
-    }
+    // const { data } = error.response;
   }
   if (!expectedError) {
     // toast.error('An unexpected eror occurred');
@@ -24,9 +14,10 @@ axios.interceptors.response.use(null, (error) => {
   return Promise.reject(error);
 });
 
-export default {
+const http = {
   get: axios.get,
   post: axios.post,
   put: axios.put,
   delete: axios.delete,
 };
+export default http;
