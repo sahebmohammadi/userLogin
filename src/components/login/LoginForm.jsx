@@ -3,13 +3,13 @@ import React from "react";
 // import { useRouter } from "next/router";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { login } from "services/merchantSigninService";
-import * as constants from "../../../constants.js";
+import { userLogin } from "../../services/userLoginService";
+import * as constants from "../../constants.js";
 import classes from "./loginForm.module.scss";
 //  Component :
 const LoginForm = ({ redirectLink }) => {
   const { forms } = constants;
-//   const router = useRouter();
+  //   const router = useRouter();
   //  initial values
   const initialValues = {
     email: "",
@@ -19,12 +19,12 @@ const LoginForm = ({ redirectLink }) => {
   const onSubmit = async (values) => {
     // CALL THE SERVER
     try {
-      const { data: response } = await login(values);
+      const { data: response } = await userLogin(values);
       // Save Token :
       const { token } = response.data;
       localStorage.setItem("token", token);
       // Redirect
-    //   router.replace(redirectLink);
+      //   router.replace(redirectLink);
     } catch (ex) {}
   };
 
