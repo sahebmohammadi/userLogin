@@ -20,7 +20,8 @@ const LoginForm = ({ redirectLink }) => {
     // CALL THE SERVER
     try {
       const response = await userLogin(values);
-      console.log(response);
+      // const cookies = response.headers["set-cookie"][0];
+      console.log(response.headers);
       // Save Token :
       console.log(response);
       const { tokens } = response.data;

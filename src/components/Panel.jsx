@@ -1,6 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { refreshToken } from "./../services/refreshTokenService";
+import classes from "./panel.module.scss";
 const Panel = () => {
   const history = useHistory();
   const handleLogOut = (e) => {
@@ -21,14 +22,14 @@ const Panel = () => {
       // history.push("/panel");
     } catch (ex) {}
   };
-  const style = {
-    padding: "100px 70px",
-  };
+
   return (
     <>
-      <h1 style={style}>Well come to user Panel</h1>
+      <h1>Well come to user Panel</h1>
       <button onClick={handleLogOut}>Logout</button>
-      <button onClick={handleRefreshToken}>refresh</button>
+      <button className={classes.logout} onClick={handleRefreshToken}>
+        refresh
+      </button>
     </>
   );
 };

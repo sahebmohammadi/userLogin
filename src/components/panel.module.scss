@@ -1,0 +1,28 @@
+h1{
+  padding: 100px;
+}
+button {
+  margin-right: 100px;
+  cursor: pointer;
+  margin-top: 30px;
+  width: 125px;
+  height: 39px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.05);
+  background-color: #052971;
+  font-family: "Shabnam";
+  font-size: 15px;
+  line-height: 1.4;
+  text-align: center;
+  color: #ffffff;
+  padding: 9px 13px 9px 15px;
+  box-sizing: border-box;
+  &:focus {
+    outline: none;
+  }
+}
+.logout {
+  background-color: #efefef;
+  color: #000;
+}
