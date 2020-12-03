@@ -1,14 +1,17 @@
 import axios from "axios";
-// ? set with Credential to ture
+// const initialzeAxios = () => {
+//   axios.defaults.baseURL = "https://api.arjanhesab.ir";
+//   axios.defaults.headers.common[
+//     "Authorization"
+//   ] = `Bearer ${localStorage.getItem("token")}`;
 axios.defaults.withCredentials = true;
-// ? check the header request
 axios.interceptors.request.use((config) => {
   if ((config.url === "users/login/") | (config.url === "users/refresh/")) {
     config.headers = {};
   }
   return config;
 });
-// ? check 401 reponse to refresh the token
+
 axios.interceptors.response.use(
   (response) => {
     return response;

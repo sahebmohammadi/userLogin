@@ -9,20 +9,17 @@ const Panel = () => {
     localStorage.removeItem("token");
     history.push("/");
   };
+
   const handleRefreshToken = async () => {
     // CALL THE SERVER
     try {
       console.log("call server");
       const token = localStorage.getItem("token");
       const response = await refreshToken(token);
+
       console.log(response);
-      // Save Token :
-      console.log(response);
-      // Redirect
-      // history.push("/panel");
     } catch (ex) {}
   };
-
   return (
     <>
       <h1>Well come to user Panel</h1>
